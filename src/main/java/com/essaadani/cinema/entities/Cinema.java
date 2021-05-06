@@ -1,13 +1,18 @@
 package com.essaadani.cinema.entities;
 
 import com.sun.istack.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Size;
-import java.util.List;
+import java.util.Collection;
 
 @Entity
+@Data @NoArgsConstructor @AllArgsConstructor @ToString
 public class Cinema {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,5 +29,5 @@ public class Cinema {
     private Ville ville;
 
     @OneToMany(mappedBy = "cinema")
-    private List<Salle> salle;
+    private Collection<Salle> salle;
 }

@@ -1,13 +1,23 @@
 package com.essaadani.cinema.entities;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+
 public class ProjectionFilm {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,5 +29,5 @@ public class ProjectionFilm {
 
 
     @OneToMany
-    private List<Ticket> tickets;
+    private Collection<Ticket> tickets;
 }
