@@ -8,21 +8,19 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
-public class Cinema {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Salle {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
     @Size(min = 5, max = 15)
     private String nom;
-    private double longitude;
-    private double latitude;
-    private double altitude;
     @DecimalMin("1")
-    private int nombreSalles;
+    private int nombrePlaces;
 
     @ManyToOne
-    private Ville ville;
+    private Cinema cinema;
 
-    @OneToMany(mappedBy = "cinema")
-    private List<Salle> salle;
+    @OneToMany
+    private List<Place> places;
 }
