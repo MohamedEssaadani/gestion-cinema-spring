@@ -7,10 +7,8 @@ import lombok.ToString;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Data
@@ -18,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @ToString
 
-public class ProjectionFilm {
+public class Projection {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,7 +25,14 @@ public class ProjectionFilm {
     private Date dateProjection;
     private double prix;
 
-
-    @OneToMany
+    @OneToMany(mappedBy = "projection")
     private Collection<Ticket> tickets;
+
+    @ManyToOne
+    private Film film;
+    @ManyToOne
+    private Salle salle;
+    @ManyToOne
+    private Seance seance;
+
 }

@@ -24,15 +24,14 @@ public class Ticket {
     @Size(min = 5, max = 15)
     private String nomClient;
     private double prix;
-    @DecimalMin("1")
+    @Column(unique = true)
     private int codePayement;
     private boolean reservee;
-
 
     @ManyToOne
     private Place place;
 
     @ManyToOne
-    private ProjectionFilm projectionFilm;
+    private Projection projection;
 
 }

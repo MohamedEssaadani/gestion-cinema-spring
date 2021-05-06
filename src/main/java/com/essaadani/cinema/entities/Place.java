@@ -9,7 +9,6 @@ import lombok.ToString;
 import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
 import java.util.Collection;
-import java.util.List;
 
 @Entity
 @Data

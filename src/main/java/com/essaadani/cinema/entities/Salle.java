@@ -10,7 +10,6 @@ import javax.persistence.*;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Size;
 import java.util.Collection;
-import java.util.List;
 
 @Entity
 @Data
@@ -31,6 +30,9 @@ public class Salle {
     @ManyToOne
     private Cinema cinema;
 
-    @OneToMany
+    @OneToMany(mappedBy = "salle")
     private Collection<Place> places;
+
+    @OneToMany(mappedBy = "salle")
+    private Collection<Projection> projections;
 }
