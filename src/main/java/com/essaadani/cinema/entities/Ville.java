@@ -22,7 +22,7 @@ public class Ville {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    @Size(min=5, max=15)
+    @Size(min=4, max=15)
     private String nom;
     private double longitude;
     private double latitude;

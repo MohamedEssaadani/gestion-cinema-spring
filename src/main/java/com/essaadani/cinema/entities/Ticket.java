@@ -24,7 +24,7 @@ public class Ticket {
     @Size(min = 5, max = 15)
     private String nomClient;
     private double prix;
-    @Column(unique = true)
+    @Column(unique = false, nullable = true)
     private int codePayement;
     private boolean reservee;
 

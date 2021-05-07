@@ -19,11 +19,11 @@ public class Film {
     private Long id;
 
     @NotNull
-    @Size(min = 5, max = 15)
+    @Size(min = 4, max = 25)
     private String titre;
 
     @NotNull
-    @Size(min = 5, max = 15)
+    @Size(min = 5, max = 25)
     private String realisateur;
 
     @NotNull

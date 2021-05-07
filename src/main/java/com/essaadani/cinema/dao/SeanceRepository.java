@@ -4,5 +4,5 @@ import com.essaadani.cinema.entities.Categorie;
 import com.essaadani.cinema.entities.Seance;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface seanceRepository extends JpaRepository<Seance, Long> {
+public interface SeanceRepository extends JpaRepository<Seance, Long> {
 }
