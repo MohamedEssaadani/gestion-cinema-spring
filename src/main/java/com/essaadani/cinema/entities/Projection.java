@@ -1,5 +1,6 @@
 package com.essaadani.cinema.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,12 +27,16 @@ public class Projection {
     private double prix;
 
     @OneToMany(mappedBy = "projection")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Collection<Ticket> tickets;
 
     @ManyToOne
     private Film film;
+
     @ManyToOne
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Salle salle;
+
     @ManyToOne
     private Seance seance;
 

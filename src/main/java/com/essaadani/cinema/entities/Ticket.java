@@ -1,5 +1,6 @@
 package com.essaadani.cinema.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +22,7 @@ public class Ticket {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    @Size(min = 5, max = 15)
+    @Size(min = 5, max = 25)
     private String nomClient;
     private double prix;
     @Column(unique = false, nullable = true)
